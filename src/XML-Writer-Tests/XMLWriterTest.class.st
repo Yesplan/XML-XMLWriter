@@ -3,12 +3,14 @@ A simple test case class.
 Please add more tests to it!
 "
 Class {
-	#name : #XMLWriterTest,
-	#superclass : #TestCase,
-	#category : #'XML-Writer-Tests-Tests'
+	#name : 'XMLWriterTest',
+	#superclass : 'TestCase',
+	#category : 'XML-Writer-Tests-Tests',
+	#package : 'XML-Writer-Tests',
+	#tag : 'Tests'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 XMLWriterTest class >> onCanonicalLineBreakJoin: aLineCollection [
 
 	^ self
@@ -16,7 +18,7 @@ XMLWriterTest class >> onCanonicalLineBreakJoin: aLineCollection [
 		  join: aLineCollection
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 XMLWriterTest class >> onLineBreak: aCharacterOrString join: aLineCollection [
 
 	| printedFirstLine |
@@ -30,19 +32,19 @@ XMLWriterTest class >> onLineBreak: aCharacterOrString join: aLineCollection [
 			  stream nextPutAll: each ] ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 XMLWriterTest >> onCanonicalLineBreakJoin: aLineCollection [
 
 	^ self class onCanonicalLineBreakJoin: aLineCollection
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 XMLWriterTest >> onLineBreak: aCharacterOrString join: aLineCollection [
 
 	^ self class onLineBreak: aCharacterOrString join: aLineCollection
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 XMLWriterTest >> prettyPrintedLines: anArrayOfLineArrays [
 	"Takes an array of arrays where the first element of each is the indent level
 	and the rest are the lines with that indent level"
@@ -65,7 +67,7 @@ XMLWriterTest >> prettyPrintedLines: anArrayOfLineArrays [
 				  stream nextPutAll: (each at: lineIndex) ] ] ]
 ]
 
-{ #category : #asserting }
+{ #category : 'asserting' }
 XMLWriterTest >> should: aBlock enumerate: aCollection [
 
 	| enumerated |
@@ -74,7 +76,7 @@ XMLWriterTest >> should: aBlock enumerate: aCollection [
 	self assert: enumerated equals: aCollection asOrderedCollection
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testActiveMarkupWriterAncestorsDo [
 
 	| writer enumerated oneTagWriter twoTagWriter threeTagWriter |
@@ -121,7 +123,7 @@ XMLWriterTest >> testActiveMarkupWriterAncestorsDo [
 		enumerate: enumerated
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testActiveMarkupWriterParent [
 
 	| writer xmlDeclarationWriter tagWriter |
@@ -154,7 +156,7 @@ XMLWriterTest >> testActiveMarkupWriterParent [
 		assert: (writer parentOfMarkupWriter: tagWriter) isNil
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testActiveMarkupWriterWithAncestorsDo [
 
 	| writer enumerated oneTagWriter twoTagWriter threeTagWriter |
@@ -209,7 +211,7 @@ XMLWriterTest >> testActiveMarkupWriterWithAncestorsDo [
 		enumerate: enumerated
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testActiveTagWriter [
 
 	| writer tagWriter |
@@ -238,7 +240,7 @@ XMLWriterTest >> testActiveTagWriter [
 	self assert: writer activeTagWriter isNil
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testAsString [
 
 	self assert:
@@ -252,7 +254,7 @@ XMLWriterTest >> testAsString [
 			tag: 'two') asString equals: '<one/><two/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testAtBeginning [
 	"on GS #writeStream gives an ANSI 0-based position stream,
 	but WriteStream on: doesn't, so both are tested, and we
@@ -272,7 +274,7 @@ XMLWriterTest >> testAtBeginning [
 			self deny: writer atBeginning]
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testAttributes [
 
 	| writer tag |
@@ -299,7 +301,7 @@ XMLWriterTest >> testAttributes [
 			'<outer first="one" second="two" third="three"><inner fourth="four">test</inner></outer>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testCDataSections [
 
 	| writer |
@@ -323,7 +325,7 @@ XMLWriterTest >> testCDataSections [
 			'</cdata>')
 ]
 
-{ #category : #'tests - canonical' }
+{ #category : 'tests - canonical' }
 XMLWriterTest >> testCanonicalComments [
 
 	| writer |
@@ -355,7 +357,7 @@ XMLWriterTest >> testCanonicalComments [
 					'<!--ten-->'))
 ]
 
-{ #category : #'tests - canonical' }
+{ #category : 'tests - canonical' }
 XMLWriterTest >> testCanonicalDTDs [
 
 	| writer |
@@ -397,7 +399,7 @@ XMLWriterTest >> testCanonicalDTDs [
 					'<empty></empty>'))
 ]
 
-{ #category : #'tests - canonical' }
+{ #category : 'tests - canonical' }
 XMLWriterTest >> testCanonicalEscaping [
 
 	| writer tag |
@@ -420,7 +422,7 @@ XMLWriterTest >> testCanonicalEscaping [
 			'<canonical escaping="&lt;>&quot;''&amp;">&lt;&gt;"''&amp;</canonical>'
 ]
 
-{ #category : #'tests - canonical' }
+{ #category : 'tests - canonical' }
 XMLWriterTest >> testCanonicalEscapingWhitespace [
 
 	| whitespace writer tag |
@@ -447,7 +449,7 @@ XMLWriterTest >> testCanonicalEscapingWhitespace [
 				format: whitespace)
 ]
 
-{ #category : #'tests - canonical' }
+{ #category : 'tests - canonical' }
 XMLWriterTest >> testCanonicalNonRedundantXMLNSDeclarations [
 
 	| withBlock |
@@ -483,7 +485,7 @@ XMLWriterTest >> testCanonicalNonRedundantXMLNSDeclarations [
 				'</one>')
 ]
 
-{ #category : #'tests - canonical' }
+{ #category : 'tests - canonical' }
 XMLWriterTest >> testCanonicalPIs [
 
 	| writer |
@@ -521,7 +523,7 @@ XMLWriterTest >> testCanonicalPIs [
 					'<?ten ten?>'))
 ]
 
-{ #category : #'tests - canonical' }
+{ #category : 'tests - canonical' }
 XMLWriterTest >> testCanonicalRedundantXMLNSDeclarations [
 
 	| withBlock |
@@ -559,7 +561,7 @@ XMLWriterTest >> testCanonicalRedundantXMLNSDeclarations [
 			contents) equals: '<empty></empty>'
 ]
 
-{ #category : #'tests - canonical' }
+{ #category : 'tests - canonical' }
 XMLWriterTest >> testCanonicalTags [
 
 	| writer |
@@ -592,7 +594,7 @@ XMLWriterTest >> testCanonicalTags [
 			'</tags>')
 ]
 
-{ #category : #'tests - canonical' }
+{ #category : 'tests - canonical' }
 XMLWriterTest >> testCanonicalXMLDeclarationsAndPIs [
 
 	| writer |
@@ -617,7 +619,7 @@ XMLWriterTest >> testCanonicalXMLDeclarationsAndPIs [
 					'<empty></empty>'))
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testClose [
 
 	self assert:
@@ -633,7 +635,7 @@ XMLWriterTest >> testClose [
 				tag: 'two') close]) equals: '<one/><two/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testContentEntityReferenceEscaping [
 
 	self assert:
@@ -655,7 +657,7 @@ XMLWriterTest >> testContentEntityReferenceEscaping [
 			'<one two="&lt;&quot;&amp;three;&quot;>">&lt;"&amp;four;"&gt;</one>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testContentEscaping [
 
 	| writer |
@@ -680,7 +682,7 @@ XMLWriterTest >> testContentEscaping [
 	self assert: writer contents equals: '<test xmlns="& " < >" unescaped="& " < >">& " < ></test>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testContents [
 
 	self assert:
@@ -694,7 +696,7 @@ XMLWriterTest >> testContents [
 			tag: 'two') contents equals: '<one/><two/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testEmbedInMarkupWriter [
 
 	(Array
@@ -728,7 +730,7 @@ XMLWriterTest >> testEmbedInMarkupWriter [
 					with: each]) equals: '<test/>']
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testEnablePlatformSpecificLineBreak [
 
 	| writer |
@@ -738,7 +740,7 @@ XMLWriterTest >> testEnablePlatformSpecificLineBreak [
 		assert: writer lineBreak equals: writer platformSpecificLineBreak
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testEnablePrettyPrinting [
 
 	| writer |
@@ -797,7 +799,7 @@ XMLWriterTest >> testEnablePrettyPrinting [
 				#(0 '</example:user>')))
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testEnablePrettyPrintingDTD [
 
 	| writer |
@@ -851,7 +853,7 @@ XMLWriterTest >> testEnablePrettyPrintingDTD [
 					'')))
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testEnablePrologPrettyPrinting [
 
 	| writer |
@@ -932,7 +934,7 @@ XMLWriterTest >> testEnablePrologPrettyPrinting [
 					'<?afterTarget afterData?>')))
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testEntityDeclaration [
 
 	| writer |
@@ -972,7 +974,7 @@ XMLWriterTest >> testEntityDeclaration [
 				']>')
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testEntityReference [
 
 	| writer |
@@ -987,7 +989,7 @@ XMLWriterTest >> testEntityReference [
 	self assert: writer contents equals: '<entities>&one;two&three;</entities>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testEntityValueEscaping [
 
 	| writer |
@@ -1008,7 +1010,7 @@ XMLWriterTest >> testEntityValueEscaping [
 	self assert: writer contents equals: '<!ENTITY test "% " < >">'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testEscapesContentEntityReferences [
 
 	| writer |
@@ -1043,7 +1045,7 @@ XMLWriterTest >> testEscapesContentEntityReferences [
 		equals: writer contentStringDefaultEscapes
 ]
 
-{ #category : #'tests - formatting' }
+{ #category : 'tests - formatting' }
 XMLWriterTest >> testFormatter [
 
 	| writer formatter |
@@ -1060,7 +1062,7 @@ XMLWriterTest >> testFormatter [
 		assert: writer formatter isNil
 ]
 
-{ #category : #'tests - formatting' }
+{ #category : 'tests - formatting' }
 XMLWriterTest >> testFormattingAttributeDeclarations [
 
 	| formatter writer doctypeWriter firstDeclarationWriter secondDeclarationWriter thirdDeclarationWriter |
@@ -1184,7 +1186,7 @@ XMLWriterTest >> testFormattingAttributeDeclarations [
 				']>')
 ]
 
-{ #category : #'tests - formatting' }
+{ #category : 'tests - formatting' }
 XMLWriterTest >> testFormattingContent [
 
 	| formatter writer tagWriter commentWriter entityRefWriter |
@@ -1301,7 +1303,7 @@ XMLWriterTest >> testFormattingContent [
 				'<empty></empty>')
 ]
 
-{ #category : #'tests - formatting' }
+{ #category : 'tests - formatting' }
 XMLWriterTest >> testFormattingElementDeclarations [
 
 	| formatter writer doctypeWriter firstDeclarationWriter secondDeclarationWriter thirdDeclarationWriter fourthDeclarationWriter |
@@ -1415,7 +1417,7 @@ XMLWriterTest >> testFormattingElementDeclarations [
 				']>')
 ]
 
-{ #category : #'tests - formatting' }
+{ #category : 'tests - formatting' }
 XMLWriterTest >> testFormattingEntityDelcarations [
 
 	| formatter writer doctypeWriter firstDeclarationWriter secondDeclarationWriter thirdDeclarationWriter fourthDeclarationWriter |
@@ -1549,7 +1551,7 @@ XMLWriterTest >> testFormattingEntityDelcarations [
 				']>')
 ]
 
-{ #category : #'tests - formatting' }
+{ #category : 'tests - formatting' }
 XMLWriterTest >> testFormattingPIs [
 
 	| formatter writer piWriter |
@@ -1671,7 +1673,7 @@ XMLWriterTest >> testFormattingPIs [
 				'<?xml-xsl "text/xsl" ''demo.xsl?>')
 ]
 
-{ #category : #'tests - formatting' }
+{ #category : 'tests - formatting' }
 XMLWriterTest >> testFormattingProlog [
 
 	| formatter writer xmlDeclarationWriter doctypeWriter |
@@ -1770,7 +1772,7 @@ XMLWriterTest >> testFormattingProlog [
 				'<!DOCTYPE test SYSTEM "system">')
 ]
 
-{ #category : #'tests - formatting' }
+{ #category : 'tests - formatting' }
 XMLWriterTest >> testFormattingUnsafeTagWriters [
 
 	| formatter writer tagWriter |
@@ -1829,7 +1831,7 @@ XMLWriterTest >> testFormattingUnsafeTagWriters [
 			'<test xmlns="defaultNS" name="value"></test>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testHadActiveTagWriter [
 
 	| writer tagWriter |
@@ -1847,7 +1849,7 @@ XMLWriterTest >> testHadActiveTagWriter [
 	self assert: writer hadActiveTagWriter
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testHasActiveTagWriter [
 
 	| writer tagWriter |
@@ -1877,7 +1879,7 @@ XMLWriterTest >> testHasActiveTagWriter [
 	self deny: writer hasActiveTagWriter
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testHasFormatter [
 
 	| writer |
@@ -1892,7 +1894,7 @@ XMLWriterTest >> testHasFormatter [
 	self deny: writer hasFormatter
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testIsCanonical [
 
 	| writer |
@@ -1933,7 +1935,7 @@ XMLWriterTest >> testIsCanonical [
 		assert: writer omitsRedundantXMLNSDeclarations
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testLineBreak [
 
 	(Array
@@ -1956,7 +1958,7 @@ XMLWriterTest >> testLineBreak [
 								'<test/>'))]
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testNonRedundantXMLNSDeclarations [
 
 	| withBlock |
@@ -1991,7 +1993,7 @@ XMLWriterTest >> testNonRedundantXMLNSDeclarations [
 				'</one>')
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testOmitsRedundantXMLNSDeclarations [
 
 	| withBlock |
@@ -2045,7 +2047,7 @@ XMLWriterTest >> testOmitsRedundantXMLNSDeclarations [
 			'<empty xmlns=""/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testOnFormatter [
 
 	| stream formatter writer |
@@ -2057,7 +2059,7 @@ XMLWriterTest >> testOnFormatter [
 		assert: writer formatter identicalTo: formatter
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testOutputsSelfClosingTags [
 
 	| writer |
@@ -2076,7 +2078,7 @@ XMLWriterTest >> testOutputsSelfClosingTags [
 			'<tags><self-closing/><not-self-closing></not-self-closing><self-closing/></tags>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testPIsWithStringValues [
 
 	| writer |
@@ -2106,7 +2108,7 @@ XMLWriterTest >> testPIsWithStringValues [
 				'<test/>')
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testRaw [
 
 	self assert:
@@ -2122,7 +2124,7 @@ XMLWriterTest >> testRaw [
 				with: [writer raw: '']]) equals: '<test/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testRedundantWrites [
 
 	self assert:
@@ -2152,7 +2154,7 @@ XMLWriterTest >> testRedundantWrites [
 			'</report>')
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testSimpleExample [
 
 	| writer  |
@@ -2165,7 +2167,7 @@ XMLWriterTest >> testSimpleExample [
 	self assert: writer contents equals: '<emptyTag a="one"/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testSimpleExampleWithWriteWith [
 
 	| block contents |
@@ -2181,7 +2183,7 @@ XMLWriterTest >> testSimpleExampleWithWriteWith [
 		assert: (XMLWriter writeWith: block) equals: contents
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testStartingAndFinishing [
 
 	| writer outer inner |
@@ -2208,7 +2210,7 @@ XMLWriterTest >> testStartingAndFinishing [
 			'<outer xmlns="default" test="value"><inner>test<empty/></inner></outer>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testString [
 
 	self assert:
@@ -2224,7 +2226,7 @@ XMLWriterTest >> testString [
 				with: [writer string: '']]) equals: '<test/>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testSystemAndPublicIDs [
 
 	| writer |
@@ -2239,7 +2241,7 @@ XMLWriterTest >> testSystemAndPublicIDs [
 	self assert: writer contents equals: '<!DOCTYPE test PUBLIC ''public"ID'' ''system"ID''>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testUnsafeTagWriters [
 
 	self assert:
@@ -2258,7 +2260,7 @@ XMLWriterTest >> testUnsafeTagWriters [
 				endTag: 'one']) equals: '</three></two></one>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testUnsafeTagWritersAttributes [
 
 	| writer tag |
@@ -2283,7 +2285,7 @@ XMLWriterTest >> testUnsafeTagWritersAttributes [
 			'<outer first="one" second="two" third="three"><inner fourth="four">'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testUnsafeTagWritersXMLNSDeclarations [
 
 	| writer tag |
@@ -2316,7 +2318,7 @@ XMLWriterTest >> testUnsafeTagWritersXMLNSDeclarations [
 			'<test xmlns="default2" xmlns:ns1="first" xmlns:ns2="second" xmlns:ns3="third">'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testWideStringContent [
 
 	| wideStringContent writer |
@@ -2346,7 +2348,7 @@ XMLWriterTest >> testWideStringContent [
 				format: (Array with: wideStringContent))
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testXMLDeclarations [
 
 	| writer |
@@ -2388,7 +2390,7 @@ XMLWriterTest >> testXMLDeclarations [
 			'<?xml version="1.0"?>')
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 XMLWriterTest >> testXMLNSDeclarations [
 
 	| writer tag |
