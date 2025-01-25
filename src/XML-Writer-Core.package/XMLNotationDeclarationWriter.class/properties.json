@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "monty 10/5/2014 18:04",
+	"super" : "XMLMarkupDeclarationWriter",
+	"category" : "XML-Writer-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"externalIDWriter"
+	],
+	"name" : "XMLNotationDeclarationWriter",
+	"type" : "normal"
+}

@@ -1,0 +1,3 @@
+writing
+xml
+	^ self xmlDeclaration

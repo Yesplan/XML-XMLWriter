@@ -1,0 +1,1 @@
+A markup writer for <![CDATA[...]]> sections. Will be output as regular escpaed strings instead if isCanonical is enbaled.

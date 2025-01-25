@@ -1,0 +1,3 @@
+formatting
+formatBeforeXMLDeclaration: anXMLDeclarationWriter
+	self writeLineBreak

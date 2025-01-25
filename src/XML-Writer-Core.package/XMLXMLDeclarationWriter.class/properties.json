@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "XMLMarkupWriter",
+	"category" : "XML-Writer-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"encoding",
+		"version",
+		"standalone"
+	],
+	"name" : "XMLXMLDeclarationWriter",
+	"type" : "normal"
+}

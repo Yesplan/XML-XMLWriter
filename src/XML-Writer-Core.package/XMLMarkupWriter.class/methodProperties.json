@@ -1,0 +1,33 @@
+{
+	"instance" : {
+		"close" : "monty 5/6/2015 16:31",
+		"writer:" : "monty 9/21/2015 01:01",
+		"initialize" : "monty 9/20/2015 23:25",
+		"contents" : "monty 5/6/2015 16:31",
+		"isTagWriter" : "monty 10/12/2014 21:11",
+		"hasEmbeddedMarkup" : "monty 1/14/2014 00:18",
+		"startWriting" : "monty 10/5/2014 15:43",
+		"hasEmbeddedStringMarkup" : "monty 12/1/2014 05:19",
+		"finishWriting" : "monty 12/5/2014 05:55",
+		"omitIfCanonical:" : "monty 10/12/2014 20:14",
+		"omitIfCanonicalInDTD:" : "monty 12/1/2014 04:10",
+		"newMarkupWriterBeingPushed" : "monty 1/16/2014 23:00",
+		"asString" : "monty 9/19/2015 21:59",
+		"newStringMarkupBeingWritten" : "monty 11/30/2014 06:21",
+		"writeBody" : "JAAyer 7/26/2010 12:12",
+		"writeEpilogue" : "JAAyer 6/20/2010 12:08",
+		"isEmbeddedWithStringMarkup" : "monty 12/1/2014 09:53",
+		"isWriting" : "monty 11/30/2014 03:32",
+		"write" : "monty 12/5/2014 04:30",
+		"parentMarkupWriter" : "monty 12/1/2014 04:07",
+		"isDoctypeWriter" : "monty 10/12/2014 21:11",
+		"writePrologue" : "JAAyer 6/20/2010 12:08",
+		"isUnsafeTagWriter" : "monty 9/18/2015 23:21",
+		"printOn:" : "JAAyer 7/21/2010 09:26",
+		"writer" : "JAAyer 6/18/2010 22:05",
+		"hasEmbeddedMarkupWriters" : "monty 10/4/2014 04:21"
+	},
+	"class" : {
+		"writer:" : "monty 9/20/2015 23:24"
+	}
+}

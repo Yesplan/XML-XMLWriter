@@ -1,0 +1,1 @@
+A writer for entity references.

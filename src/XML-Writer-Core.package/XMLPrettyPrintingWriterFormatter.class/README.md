@@ -1,0 +1,1 @@
+A formatter that inserts ignorable whitespace to make XML more readable.

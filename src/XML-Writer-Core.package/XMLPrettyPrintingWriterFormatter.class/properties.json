@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "monty 5/8/2015 05:09",
+	"super" : "XMLWriterFormatter",
+	"category" : "XML-Writer-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "XMLPrettyPrintingWriterFormatter",
+	"type" : "normal"
+}
